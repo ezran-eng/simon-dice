@@ -31,8 +31,8 @@ $(document).ready( function() {
 	//Lets user change difficulty level
 	$('#difficulty').click( function() {
 		if (difficulty === 'normal') {
-			difficulty = 'strict';
-		} else if (difficulty === 'strict') {
+			difficulty = 'dificil';
+		} else if (difficulty === 'dificil') {
 			difficulty = 'normal';
 		}
 	});
@@ -185,12 +185,12 @@ $(document).ready( function() {
 			if (difficulty === 'normal') {
 				//Display alert to let user know they got it wrong and to try again
 				sweetAlert({
-					title: 'Oops, that wasn\'t right',
-					text: 'Would you like to try again?',
+					title: 'Oops, eso no estuvo bien',
+					text: 'Queres jugar de nuevo?',
 					type: 'warning',
 					showCancelButton: true,
 					confirmButtonColor: '#6BE2F9',
-					confirmButtonText: 'Yes',
+					confirmButtonText: 'Si',
 					cancelButtonText: 'No',
 					closeOnConfirm: true,
 					closeOnCancel: true,
@@ -215,15 +215,15 @@ $(document).ready( function() {
 					}
 				});
 
-			} else if (difficulty === 'strict') {
+			} else if (difficulty === 'dificil') {
 				//Display alert letting user know they lost, ask if they want to play again,
 				sweetAlert({
-					title: 'Sorry you lose :(',
-					text: 'Would you like to play again?',
+					title: 'La proxima, perdiste :(',
+					text: 'Queres jugar de nuevo?',
 					type: 'error',
 					showCancelButton: true,
 					confirmButtonColor: '#6BE2F9',
-					confirmButtonText: 'Yes',
+					confirmButtonText: 'Si',
 					cancelButtonText: 'No',
 					closeOnConfirm: true,
 					closeOnCancel: true,
@@ -262,12 +262,12 @@ $(document).ready( function() {
 		if (currentLevel === 20) {
 			//alert user they've won and restart the game
 			sweetAlert({
-				title: 'You\'ve Won!',
-				text: 'Would you like to play again?',
+				title: 'Ganaste!',
+				text: 'Queres jugar de nuevo?',
 				type: 'success',
 				showCancelButton: true,
 				confirmButtonColor: '#6BE2F9',
-				confirmButtonText: 'Yes',
+				confirmButtonText: 'Si',
 				cancelButtonText: 'No',
 				closeOnConfirm: true,
 				closeOnCancel: true,
@@ -317,20 +317,20 @@ $(document).ready( function() {
 	function startGame() {
 		//show alert to choose difficulty level
 		sweetAlert({
-			title: 'Let\'s Play!',
-			text: 'Choose your difficulty level',
+			title: 'A jugar!',
+			text: 'Elija la dificultad',
 			type: 'info',
 			showCancelButton: true,
 			confirmButtonColor: '#6BE2F9',
-			confirmButtonText: 'Strict',
+			confirmButtonText: 'dificil',
 			cancelButtonText: 'Normal',
 			closeOnConfirm: true,
 			closeOnCancel: true,
 			customClass: 'simonAlert'
 		}, function(confirmed) {
 			if (confirmed) {
-				//change difficulty to strict
-				difficulty = 'strict';
+				//change difficulty to dificil
+				difficulty = 'dificil';
 			}
 
 			//start new round
